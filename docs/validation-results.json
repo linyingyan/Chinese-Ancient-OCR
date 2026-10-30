@@ -1,0 +1,78 @@
+{
+  "checked_on": "2026-10-30",
+  "purpose": "Publish a cleaned source snapshot, not a production deployment",
+  "python_syntax_files": 8,
+  "frontend_build": "pass (npm run build after lockfile updates)",
+  "frontend_audit_before": {
+    "info": 0,
+    "low": 0,
+    "moderate": 2,
+    "high": 9,
+    "critical": 0,
+    "total": 11
+  },
+  "frontend_audit_after": {
+    "info": 0,
+    "low": 0,
+    "moderate": 2,
+    "high": 1,
+    "critical": 0,
+    "total": 3
+  },
+  "remaining": [
+    {
+      "package": "echarts",
+      "severity": "moderate",
+      "range": "<6.1.0",
+      "fix": {
+        "name": "echarts",
+        "version": "6.1.0",
+        "isSemVerMajor": true
+      },
+      "advisories": [
+        "https://github.com/advisories/GHSA-fgmj-fm8m-jvvx"
+      ]
+    },
+    {
+      "package": "esbuild",
+      "severity": "moderate",
+      "range": "<=0.24.2",
+      "fix": {
+        "name": "vite",
+        "version": "8.3.5",
+        "isSemVerMajor": true
+      },
+      "advisories": [
+        "https://github.com/advisories/GHSA-67mh-4wv8-2f99"
+      ]
+    },
+    {
+      "package": "vite",
+      "severity": "high",
+      "range": "<=6.4.3",
+      "fix": {
+        "name": "vite",
+        "version": "8.3.5",
+        "isSemVerMajor": true
+      },
+      "advisories": [
+        "https://github.com/advisories/GHSA-4w7w-66w2-5vf9",
+        "https://github.com/advisories/GHSA-v6wh-96g9-6wx3",
+        "https://github.com/advisories/GHSA-698v-4r3x-3vcv",
+        "https://github.com/advisories/GHSA-r825-w8mm-5pxw",
+        "https://github.com/advisories/GHSA-587h-7wmj-h5pm",
+        "https://github.com/advisories/GHSA-9jrq-w75r-8gcw",
+        "https://github.com/advisories/GHSA-rq7h-c2jc-7f22",
+        "https://github.com/advisories/GHSA-fx2h-pf6j-xcff"
+      ]
+    }
+  ],
+  "backend_smoke": "health, create/read/list records, rule extraction passed in temporary SQLite with explicitly stubbed OCR; no provider API calls",
+  "not_run": [
+    "PaddleOCR engine inference/model downloads",
+    "online LLM extraction",
+    "full backend/UI workflow",
+    "Python dependency vulnerability audit"
+  ],
+  "dependency_deferral_review_date": "2026-11-06"
+}

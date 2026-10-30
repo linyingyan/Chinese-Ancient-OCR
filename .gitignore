@@ -1,0 +1,33 @@
+# Local import records
+.local/
+# Credentials / developer settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+.idea/
+.vscode/
+.DS_Store
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+# Frontend dependencies and generated assets
+node_modules/
+frontend/dist/
+*.tsbuildinfo
+# User documents, databases and OCR output
+output/
+uploads/
+data/
+*.db
+*.db-*
+*.sqlite*
+*.pdf
+*.rar
+*.zip
+*.log
